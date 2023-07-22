@@ -38,3 +38,4 @@ bundle/
 node_modules/
 /vendor/bundle
 /vendor
+vendor/
