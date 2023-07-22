@@ -1,10 +1,24 @@
 class Comment < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  # Validations
+  validates :text, presence: true
+
+  # Associations
+  belongs_to :user
   belongs_to :post
 
-  after_save :update_post_comments_counter
+  # Callback to update the comments counter for the associated post after comment creation or deletion
+  after_create :increment_post_comments_counter
+  after_destroy :decrement_post_comments_counter
 
-  def update_posts_comments_counter
+  private
+
+  # Method to increment the comments counter for the associated post
+  def increment_post_comments_counter
     post.increment!(:comments_counter)
+  end
+
+  # Method to decrement the comments counter for the associated post
+  def decrement_post_comments_counter
+    post.decrement!(:comments_counter)
   end
 end
