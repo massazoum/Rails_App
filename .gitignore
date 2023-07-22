@@ -36,4 +36,4 @@ bundle/
 /config/master.key
 # .gitignore
 node_modules/
-/vendor/bundle/
+/vendor/bundle
