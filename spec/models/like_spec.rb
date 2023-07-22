@@ -9,7 +9,7 @@ RSpec.describe Like, type: :model do
   describe '#update_like_counter' do
     it 'increments the likes_counter of the associated post' do
       post = FactoryBot.create(:post)
-      like = Like.create(post: post)
+      like = Like.create(post: post) # Updated hash syntax here
 
       expect do
         like.update_like_counter

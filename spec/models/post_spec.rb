@@ -14,14 +14,14 @@ RSpec.describe Post, type: :model do
       post = Post.create(title: 'Test Post', text: 'This is a test post', comments_counter: 0, likes_counter: 0)
 
       comments = [
-        Comment.create(text: 'Comment 1', user: User.create(name: 'Alice'), post: post),
-        Comment.create(text: 'Comment 2', user: User.create(name: 'Bob'), post: post),
-        Comment.create(text: 'Comment 3', user: User.create(name: 'Charlie'), post: post),
-        Comment.create(text: 'Comment 4', user: User.create(name: 'David'), post: post),
-        Comment.create(text: 'Comment 5', user: User.create(name: 'Eve'), post: post),
-        Comment.create(text: 'Comment 6', user: User.create(name: 'Frank'), post: post),
-        Comment.create(text: 'Comment 7', user: User.create(name: 'Frank'), post: post),
-        Comment.create(text: 'Comment 8', user: User.create(name: 'Frank'), post: post)
+        Comment.create(text: 'Comment 1', user: User.create(name: 'Alice'), post:),
+        Comment.create(text: 'Comment 2', user: User.create(name: 'Bob'), post:),
+        Comment.create(text: 'Comment 3', user: User.create(name: 'Charlie'), post:),
+        Comment.create(text: 'Comment 4', user: User.create(name: 'David'), post:),
+        Comment.create(text: 'Comment 5', user: User.create(name: 'Eve'), post:),
+        Comment.create(text: 'Comment 6', user: User.create(name: 'Frank'), post:),
+        Comment.create(text: 'Comment 7', user: User.create(name: 'Frank'), post:),
+        Comment.create(text: 'Comment 8', user: User.create(name: 'Frank'), post:)
       ]
 
       # Convert the ActiveRecord association to an array
