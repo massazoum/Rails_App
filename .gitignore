@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+bundle/
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -35,3 +36,4 @@
 /config/master.key
 # .gitignore
 node_modules/
+/vendor/bundle/
