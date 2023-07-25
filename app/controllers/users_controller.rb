@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    # Placeholder for rendering users index view
+  end
 
-  def slp; end
+  def show
+    # Placeholder for rendering a user's details view
+  end
 end

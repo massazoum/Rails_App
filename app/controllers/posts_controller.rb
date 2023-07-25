@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  def index; end
+  def index
+    # Placeholder for rendering user's posts list view
+  end
 
-  def slp; end
+  def show
+    # Placeholder for rendering a single post view
+  end
 end
