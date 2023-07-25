@@ -87,7 +87,6 @@ To run the project, execute the following commands:
 - Twitter: [@zoumaniguimass1](https://twitter.com/zoumaniguimass1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/zoumtechmassa/)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
