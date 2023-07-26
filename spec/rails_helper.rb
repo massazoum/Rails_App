@@ -4,7 +4,6 @@ require 'shoulda/matchers'
 ENV['RAILS_ENV'] ||= 'test'
 
 # spec/rails_helper.rb
-
 require File.expand_path('../config/environment', __dir__)
 
 # Prevent database truncation if the environment is production
