@@ -13,14 +13,16 @@
         <%= image_tag "default_avatar.png", alt: "Default Avatar", class: "user-photo" %>
       <% end %>
     </div>
-    <li class="user-list">
+    <div class="user-list">
       <span class="user-name"><%= user.name %></span>
+      <p class="Number_of_posts">
       <% if user.post_counter == 1 %>
         (1 post)
       <% else %>
-        <strong class="Number_of_posts">Number of posts: <%= user.posts.count %></strong>
+     Number of posts: <%= user.posts.count %>
       <% end %>
-    </li>
+      </p>
+    </div>
   </div>
   <% end %>
 </ul>

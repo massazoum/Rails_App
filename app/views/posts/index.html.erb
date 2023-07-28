@@ -2,14 +2,25 @@
   <%= stylesheet_link_tag 'poststyle', media: 'all' %>
 <% end %>
 
-<div class="user-list">
-  <%= @user.name %>
-  <% if @user.post_counter == 1 %>
-    (1 post)
-  <% else %>
-    <strong class="Number_of_posts">Number of posts: <%= @user.posts.count %></strong>
-  <% end %>
-</div>
+ <div class ="userphotoName">
+    <div class="photo"> 
+      <% if @user.photo.present? %>
+        <%= image_tag @user.photo, class: "user-photo" %>
+      <% else %>
+        <%= image_tag "default_avatar.png", alt: "Default Avatar", class: "user-photo" %>
+      <% end %>
+    </div>
+    <div class="user-list">
+      <span class="user-name"><%= @user.name %></span>
+     <p class="Number_of_posts">
+      <% if @user.post_counter == 1 %>
+        (1 post)
+      <% else %>
+        <strong >Number of posts: <%= @user.posts.count %></strong>
+      <% end %>
+      </p>
+    </div>
+  </div>
 
 <ul>
   <% @user.posts.each do |post| %>

@@ -3,19 +3,26 @@ h1 {
 }
 
 .user-list {
+  display: flex;
   font-size: x-large;
   font-weight: 200;
   border: 5px solid black;
-  min-width: 30vw;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   list-style: none;
   height: 70px;
+  width: 95vw;
+}
+
+.user-name {
+  min-width: 150px;
 }
 
 .Number_of_posts {
-  display: flex;
+  margin-left: 60vw;
   justify-content: end;
   margin-right: 50px;
+  margin-top: 30px;
+  font-size: large;
 }
 
 .userphotoName {
@@ -25,7 +32,8 @@ h1 {
 
 .photo {
   border: 2px solid black;
-  height: 50px;
-  width: 50px;
-  margin: 10px 10px 10px 10px;
+  height: 75px;
+  width: 80px;
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
