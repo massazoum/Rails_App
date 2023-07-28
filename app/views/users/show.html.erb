@@ -1,1 +1,46 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'userstyleshow', media: 'all' %>
+<% end %>
+
 <h1>User Details</h1>
+
+ <div class ="userphotoName">
+    <div class="photo"> 
+      <% if @user.photo.present? %>
+        <%= image_tag @user.photo, class: "user-photo" %>
+      <% else %>
+        <%= image_tag "default_avatar.png", alt: "Default Avatar", class: "user-photo" %>
+      <% end %>
+    </div>
+    <div class="user-list">
+      <span class="user-name"><%= @user.name %></span>
+     <p class="Number_of_posts">
+      <% if @user.post_counter == 1 %>
+        (1 post)
+      <% else %>
+       Number of posts: <%= @user.posts.count %></strong>
+      <% end %>
+      </p>
+    </div>
+  </div>
+
+<div class="bio">
+  <h1>Bio:</h1>
+  <%= @user.bio %>
+</div>
+
+<h3>Recent Posts:</h3>
+<ul>
+  <% @user.recent_posts.each do |post| %>
+    <li class="post-list">
+      <strong><%= post.title %></strong>
+      <p><%= post.text %></p>   
+      <p class= "detail_post">
+        <strong class="Number_of_comment">Comments: <%= post.comments_counter %></strong> 
+        <strong class="Number_of_like">Likes: <%= post.likes_counter %></strong>
+      </p>
+    </li>   
+  <% end %>
+</ul>
+
+<div class="divbtn"> <%= link_to "View All Posts", user_posts_path(@user), class: "btn btn-primary btn-view-posts" %> <div>
