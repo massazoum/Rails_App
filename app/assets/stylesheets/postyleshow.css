@@ -1,0 +1,22 @@
+.comment-list {
+  font-size: x-large;
+  font-weight: 200;
+  border: 5px solid black;
+  min-width: 30vw;
+  margin-bottom: 10px;
+  list-style: none;
+  min-height: 100px;
+}
+
+strong {
+  margin-right: 10px;
+}
+
+.tex-bio {
+  font-size: medium;
+  font-weight: 200;
+  border: 5px solid black;
+  min-width: 30vw;
+  margin-bottom: 10px;
+  min-height: 100px;
+}

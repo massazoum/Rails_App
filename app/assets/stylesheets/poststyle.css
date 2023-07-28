@@ -1,0 +1,27 @@
+h1 {
+  font-size: xx-large;
+}
+
+.frame_post {
+  font-size: x-large;
+  font-weight: 200;
+  border: 5px solid black;
+  min-width: 30vw;
+  margin-bottom: 5px;
+  list-style: none;
+  height: auto;
+}
+
+.frame_comment {
+  font-size: x-large;
+  font-weight: 200;
+  border: 5px solid black;
+  min-width: 30vw;
+  margin-bottom: 10px;
+  list-style: none;
+  height: auto;
+}
+
+.frame_postcomment {
+  margin-bottom: 50px;
+}

@@ -1,2 +1,17 @@
-<h1>Users Index Page</h1>
-<p>Here is a list of users:</p>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'userstyle', media: 'all' %>
+<% end %>
+
+<h1>Here is a list of users:</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li class="user-list">
+      <%= user.name %>
+      <% if user.post_counter == 1 %>
+        (1 post)
+      <% else %>
+  <strong  class="Number_of_posts" >Number of posts : <%=user.posts.count %></strong>     
+      <% end %>
+    </li>
+  <% end %>
+</ul>

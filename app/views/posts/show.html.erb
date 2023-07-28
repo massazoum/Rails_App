@@ -1,1 +1,19 @@
-<h1>Post Details</h1>
+<!-- app/views/post/show.html.erb -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'poststyle', media: 'all' %>
+<% end %>
+<div class="tex-bio">
+<div><%= @post.title %> by <%= @user.name %> </div>
+
+<p><%= @post.text %></p>
+</div>
+
+<div class="comment-list">
+<p><strong>Comments:</strong></p>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><%= comment.text %></li>
+  <% end %>
+</ul>
+</div>
+

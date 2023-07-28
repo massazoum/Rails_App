@@ -1,1 +1,21 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'userstyleshow', media: 'all' %>
+<% end %>
+
 <h1>User Details</h1>
+<h2>Name: <%= @user.name %></h2>
+
+<div class="bio">
+  <h1>Bio:</h1>
+  <%= @user.bio %>
+</div>
+
+<h3>Posts:</h3>
+<ul>
+  <% @user.posts.each do |post| %>
+    <li class="post-list"><strong><%= post.title %></strong> <p><%= post.text %></p>   
+    <p class=detail_post> <strong  class="Number_of_comment"> Comments: <%=post.comments_counter %></strong> 
+      <strong  class="Number_of_like"> Likes : <%=post.likes_counter %></strong>  <p>
+    </li>   
+  <% end %>
+</ul>

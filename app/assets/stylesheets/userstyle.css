@@ -1,0 +1,20 @@
+h1 {
+  font-size: xx-large;
+}
+
+.user-list {
+  font-size: x-large;
+  font-weight: 200;
+  border: 5px solid black;
+  min-width: 30vw;
+  margin-bottom: 10px;
+  list-style: none;
+  height: 70px;
+}
+
+.Number_of_posts {
+  display: flex;
+  justify-content: end;
+  margin-right: 50px;
+  top: 10px;
+}

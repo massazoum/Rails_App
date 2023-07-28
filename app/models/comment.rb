@@ -3,7 +3,7 @@ class Comment < ApplicationRecord
   validates :text, presence: true
 
   # Associations
-  belongs_to :user
+  belongs_to :author, class_name: 'User',  foreign_key: 'author_id'
   belongs_to :post
 
   # Callback to update the comments counter for the associated post after comment creation or deletion
