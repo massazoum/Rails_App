@@ -1,7 +1,7 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'poststyle', media: 'all' %>
 <% end %>
-
+<div class ="postframe">
  <div class ="userphotoName">
     <div class="photo"> 
       <% if @user.photo.present? %>
@@ -21,7 +21,7 @@
       </p>
     </div>
   </div>
-
+  </div>
 <ul>
   <% @user.posts.each do |post| %>
     <li class="frame_postcomment">
