@@ -6,7 +6,6 @@ class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :post
 
-  # Callback to update the comments counter for the associated post after comment creation or deletion
   after_create :increment_post_comments_counter
   after_destroy :decrement_post_comments_counter
 
