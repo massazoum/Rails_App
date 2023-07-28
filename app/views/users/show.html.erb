@@ -10,12 +10,18 @@
   <%= @user.bio %>
 </div>
 
-<h3>Posts:</h3>
+<h3>Recent Posts:</h3>
 <ul>
-  <% @user.posts.each do |post| %>
-    <li class="post-list"><strong><%= post.title %></strong> <p><%= post.text %></p>   
-    <p class=detail_post> <strong  class="Number_of_comment"> Comments: <%=post.comments_counter %></strong> 
-      <strong  class="Number_of_like"> Likes : <%=post.likes_counter %></strong>  <p>
+  <% @user.recent_posts.each do |post| %>
+    <li class="post-list">
+      <strong><%= post.title %></strong>
+      <p><%= post.text %></p>   
+      <p class=detail_post>
+        <strong class="Number_of_comment">Comments: <%= post.comments_counter %></strong> 
+        <strong class="Number_of_like">Likes: <%= post.likes_counter %></strong>
+      </p>
     </li>   
   <% end %>
 </ul>
+
+<div class="divbtn"> <%= link_to "View All Posts", user_posts_path(@user), class: "btn btn-primary btn-view-posts" %> <div>

@@ -1,38 +1,36 @@
- <% content_for :head do %>
+<% content_for :head do %>
   <%= stylesheet_link_tag 'poststyle', media: 'all' %>
 <% end %>
 
- 
- <div class="user-list">
-      <%= @user.name %>
-      <% if @user.post_counter == 1 %>
-        (1 post)
-      <% else %>
-  <strong  class="Number_of_posts" >Number of posts : <%=@user.posts.count %></strong>     
-      <% end %>
-    </div>
+<div class="user-list">
+  <%= @user.name %>
+  <% if @user.post_counter == 1 %>
+    (1 post)
+  <% else %>
+    <strong class="Number_of_posts">Number of posts: <%= @user.posts.count %></strong>
+  <% end %>
+</div>
 
 <ul>
-  <% @posts.each do |post| %>
-  <li class="frame_postcomment">
-    <div  class="frame_post"> 
-    <h2><%= post.title %></h2>
-      <p><%= post.text %></p>
-    </div>
+  <% @user.posts.each do |post| %>
+    <li class="frame_postcomment">
+      <div class="frame_post">
+        <h2><%= post.title %></h2>
+        <p><%= post.text %></p>
+      </div>
 
-<div class="frame_comment">
-      <h3>Comments:</h3>
-      <% if post.comments.any? %>
-        <ul>
-          <% post.comments.each do |comment| %>
-            <li><%= comment.text %></li>
-          <% end %>
-        </ul>
-      <% else %>
-        <p>No comments for this post.</p>
-      <% end %>
-        </div>
-        
+      <div class="frame_comment">
+        <h3>Recent Comments:</h3>
+        <% if post.recent_comments.any? %>
+          <ul>
+            <% post.recent_comments.each do |comment| %>
+              <li><%= comment.text %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>No comments for this post.</p>
+        <% end %>
+      </div>
     </li>
   <% end %>
 </ul>

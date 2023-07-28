@@ -27,3 +27,23 @@ strong {
   margin-bottom: 10px;
   min-height: 100px;
 }
+
+.btn-view-posts {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view-posts:hover {
+  background-color: #0056b3;
+}
+
+.divbtn {
+  display: flex;
+  justify-content: center;
+}

@@ -5,13 +5,22 @@
 <h1>Here is a list of users:</h1>
 <ul>
   <% @users.each do |user| %>
+  <div class ="userphotoName">
+    <div class="photo"> 
+      <% if user.photo.present? %>
+        <%= image_tag user.photo, class: "user-photo" %>
+      <% else %>
+        <%= image_tag "default_avatar.png", alt: "Default Avatar", class: "user-photo" %>
+      <% end %>
+    </div>
     <li class="user-list">
-      <%= user.name %>
+      <span class="user-name"><%= user.name %></span>
       <% if user.post_counter == 1 %>
         (1 post)
       <% else %>
-  <strong  class="Number_of_posts" >Number of posts : <%=user.posts.count %></strong>     
+        <strong class="Number_of_posts">Number of posts: <%= user.posts.count %></strong>
       <% end %>
     </li>
+  </div>
   <% end %>
 </ul>

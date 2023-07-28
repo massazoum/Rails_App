@@ -16,5 +16,16 @@ h1 {
   display: flex;
   justify-content: end;
   margin-right: 50px;
-  top: 10px;
+}
+
+.userphotoName {
+  display: flex;
+  flex-direction: row;
+}
+
+.photo {
+  border: 2px solid black;
+  height: 50px;
+  width: 50px;
+  margin: 10px 10px 10px 10px;
 }
