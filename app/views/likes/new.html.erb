@@ -1,0 +1,6 @@
+<h1>Add a Like</h1>
+
+<%= form_with(model: @like, url: likes_path) do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <%= form.submit "Like" %>
+<% end %>

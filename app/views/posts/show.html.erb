@@ -16,3 +16,8 @@
   <% end %>
 </ul>
 </div>
+
+<h1><%= @post.title %></h1>
+<p><%= @post.text %></p>
+
+<%= button_to "Like", post_likes_path(@post), method: :post %>
