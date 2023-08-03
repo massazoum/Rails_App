@@ -5,7 +5,7 @@
 <h1>Here is a list of users:</h1>
 <ul>
   <% @users.each do |user| %>
-  <div class ="userphotoName">
+  <li class ="userphotoName"  id="user-<%= user.id %>-<%= user.name.parameterize %>">
     <div class="photo"> 
       <% if user.photo.present? %>
         <%= image_tag user.photo, class: "user-photo" %>
@@ -14,15 +14,15 @@
       <% end %>
     </div>
     <div class="user-list">
-      <span class="user-name"><%= user.name %></span>
-      <p class="Number_of_posts">
+      <span class="user-name"> <%= link_to user.name, user_path(user), class: "user-link" %></span>
+      <p class="Number_of_posts"> 
       <% if user.post_counter == 1 %>
         (1 post)
       <% else %>
-     Number of posts: <%= user.posts.count %>
+        Number of posts: <%= user.posts.count %>
       <% end %>
       </p>
     </div>
-  </div>
+  </li>
   <% end %>
 </ul>

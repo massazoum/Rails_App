@@ -10,6 +10,26 @@ require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'rails-controller-testing'
+
+# for testing bacara 
+# require 'capybara/rspec'
+# require 'selenium-webdriver'
+
+# Capybara.default_driver = :selenium_chrome_headless # Use headless Chrome for testing
+# Capybara.javascript_driver = :selenium_chrome_headless # Use headless Chrome for JavaScript-enabled tests
+# Capybara.server = :puma # Use Puma as the app server for Capybara
+
+Capybara.register_driver :edge do |app|
+  Capybara::Selenium::Driver.new(app, browser: :edge)
+end
+
+Capybara.javascript_driver = :edge # Use :edge for JavaScript-enabled tests
+Capybara.default_driver = :edge  
+
+# chrome version 
+# require 'webdrivers/chromedriver'
+# Webdrivers::Chromedriver.required_version = '115.0.5790.110'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
