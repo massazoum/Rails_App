@@ -3,7 +3,6 @@ require 'rails_helper'
 require 'capybara/rails'
 
 RSpec.describe 'User Show Page', type: :feature do
-
   # Create a test user to populate the page
   before do
     @user = FactoryBot.create(:user)
@@ -54,14 +53,12 @@ RSpec.describe 'User Show Page', type: :feature do
       click_link(post.title)
       # No need to check current_path, as we are already on the user's post show page
     end 
-    
-    it 'redirects to the user\'s posts index page when clicking the "View All Posts" button' do
-      puts "Current path before clicking: #{current_path}"
-      click_link("View All Posts")
-      puts "Current path after clicking: #{current_path}"
-      # expect(current_path).to eq(user_posts_path(@user))
-      expect(page).to have_current_path(user_path(@user))
-    end
       
+    it 'redirects to the user\'s posts index page when clicking the "View All Posts" button' do
+      click_link("View All Posts")
+      expected_path = "#{user_path(@user)}/posts"
+      expect(page).to have_current_path(expected_path)
+    end
+    
   end
 end

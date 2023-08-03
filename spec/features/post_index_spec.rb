@@ -56,13 +56,11 @@ RSpec.describe 'User Show Page with Posts and Comments', type: :feature do
   describe 'Display User\'s Posts and Comments' do
     it 'displays each post\'s title' do
       @user.posts.all.each do |post|
-        key = post.title
         puts post.title
-        puts key
-        expect(page).to have_content(key)
+        puts post.text
+        expect(page).to have_content(post.text)
       end
     end
-  
 
     it 'displays the first comments on each post' do
       @user.posts.all.each do |post|

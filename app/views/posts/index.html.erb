@@ -29,7 +29,7 @@
   <% @user.posts.each do |post| %>
     <li class="frame_postcomment">
       <div class="frame_post">
-        <h2><%= link_to post.title, post_path(user_id: @user, id: post.id) %></h2>
+        <h2> <%= link_to post.title, post_path(user_id: @user, id: post.id) %></h2>
         <p><%= post.text %></p>
       </div>
 
