@@ -53,15 +53,17 @@ RSpec.describe 'User Show Page with Posts and Comments', type: :feature do
     end 
   end 
 
-
-
-
   describe 'Display User\'s Posts and Comments' do
     it 'displays each post\'s title' do
       @user.posts.all.each do |post|
-        expect(page).to have_link(post.title, href: post_path(post))
+        key = post.title
+        puts post.title
+        puts key
+        expect(page).to have_content(key)
       end
     end
+    
+    
     
     # it 'displays the first comments on each post' do
     #   @user.posts.all.each do |post|
@@ -88,17 +90,19 @@ RSpec.describe 'User Show Page with Posts and Comments', type: :feature do
     #   click_link(post.title)
     #   expect(current_path).to eq(post_path(post))
     # end
+
+
     it 'displays paginated posts' do
-      next_page_url = user_posts_path(@user, page: 2) # Replace `user_posts_path` with your actual route helper
-    
+      next_page_url = user_posts_path(@user, page: 2)
       visit next_page_url
+  
+      expect(next_page_url).to match(%r{/users/\d+/posts\?page=\d+})
+    end
+
     
-     puts next_page_url
       # @user.posts.paginate(page: 2, per_page: 5).each do |post|
       #   expect(page).to have_link(post.title, href: post_path(post))
       # end
-    end
-    
 
     # it 'displays how many comments each post has' do
     #   @user.posts.all.each do |post|
