@@ -5,7 +5,6 @@ RSpec.describe 'User Index Page', type: :feature do
   # Before each test, create some test users to populate the page
   before do
     # Create some test users (use FactoryBot or any other factory gem)
-    # For example, you can use FactoryBot:
     FactoryBot.create_list(:user, 5)
     visit users_path
   end
