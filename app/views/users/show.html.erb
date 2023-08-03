@@ -33,7 +33,7 @@
 <ul>
   <% @user.recent_posts.each do |post| %>
     <li class="post-list">
-      <strong><%= post.title %></strong>
+      <strong><%= link_to post.title, post_path(user_id: @user, id: post.id) %></strong>
       <p><%= post.text %></p>   
       <p class= "detail_post">
         <strong class="Number_of_comment">Comments: <%= post.comments_counter %></strong> 

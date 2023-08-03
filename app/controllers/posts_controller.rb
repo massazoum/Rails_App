@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:comments) # Eager loading comments
+    @posts = @user.posts.paginate(page: params[:page], per_page: 5)
   end
 
   def show
     @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @post = @user.posts.includes(:comments).find(params[:id]) # Eager loading comments
   end
 
   def new

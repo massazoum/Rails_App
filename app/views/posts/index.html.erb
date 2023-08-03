@@ -2,7 +2,9 @@
   <%= stylesheet_link_tag 'poststyle', media: 'all' %>
 <% end %>
 <div class ="postframe">
+
  <div class ="userphotoName">
+
     <div class="photo"> 
       <% if @user.photo.present? %>
         <%= image_tag @user.photo, class: "user-photo" %>
@@ -10,6 +12,7 @@
         <%= image_tag "default_avatar.png", alt: "Default Avatar", class: "user-photo" %>
       <% end %>
     </div>
+
     <div class="user-list">
       <span class="user-name"><%= @user.name %></span>
      <p class="Number_of_posts">
@@ -21,17 +24,17 @@
       </p>
     </div>
   </div>
-  </div>
+
 <ul>
   <% @user.posts.each do |post| %>
     <li class="frame_postcomment">
       <div class="frame_post">
-        <h2><%= post.title %></h2>
+        <h2> <%= link_to post.title, post_path(user_id: @user, id: post.id) %></h2>
         <p><%= post.text %></p>
       </div>
 
       <div class="frame_comment">
-        <h3>Recent Comments:</h3>
+        <h3><%= "Recent Comments: #{post.recent_comments.count}" %></h3>
         <% if post.recent_comments.any? %>
           <ul>
             <% post.recent_comments.each do |comment| %>
@@ -45,3 +48,6 @@
     </li>
   <% end %>
 </ul>
+<%= will_paginate @posts, renderer: WillPaginate::ActionView::LinkRenderer, next_label: 'Next Page' %>
+
+</div>
