@@ -49,7 +49,7 @@ RSpec.describe 'User Show Page with Posts and Comments', type: :feature do
       post = @user.recent_posts.first
       visit user_path(@user) # Visit the user show page directly
       click_link(post.title)
-      # No need to check current_path, as we are already on the user's post show page
+      
     end 
   end 
 
@@ -62,16 +62,7 @@ RSpec.describe 'User Show Page with Posts and Comments', type: :feature do
         expect(page).to have_content(key)
       end
     end
-    
-    
-    
-    # it 'displays the first comments on each post' do
-    #   @user.posts.all.each do |post|
-               #     puts post.recent_comments.first.text
-    #     comment_text = post.recent_comments.first.text
-    #     expect(page).to have_content(comment_text)
-    #   end
-    # end
+  
 
     it 'displays the first comments on each post' do
       @user.posts.all.each do |post|
@@ -84,33 +75,11 @@ RSpec.describe 'User Show Page with Posts and Comments', type: :feature do
       end
     end
 
-
-    # it 'redirects to a post\'s show page when clicking on a post' do
-    #   post = @user.posts.first
-    #   click_link(post.title)
-    #   expect(current_path).to eq(post_path(post))
-    # end
-
-
     it 'displays paginated posts' do
       next_page_url = user_posts_path(@user, page: 2)
       visit next_page_url
   
       expect(next_page_url).to match(%r{/users/\d+/posts\?page=\d+})
     end
-
-    
-      # @user.posts.paginate(page: 2, per_page: 5).each do |post|
-      #   expect(page).to have_link(post.title, href: post_path(post))
-      # end
-
-    # it 'displays how many comments each post has' do
-    #   @user.posts.all.each do |post|
-    #     visit user_path(@user) # Visit the user's show page again
-    #     comment_count = post.recent_comments.count
-    #     puts post.comments
-    #     expect(page).to have_content("Recent Comments: #{post.comments}")
-    #   end
-    # end
   end
 end
