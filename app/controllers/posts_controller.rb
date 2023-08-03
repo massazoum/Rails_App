@@ -9,8 +9,8 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments).find(params[:id]) # Eager loading comments
   end
-  
-  def new
+
+  def new                   
     @post = Post.new
   end
 
