@@ -5,14 +5,39 @@
   justify-content: center;
 }
 
+.submain {
+  column-gap: 10px;
+}
+
+.name-input {
+  width: 400px;
+}
+
+.email-input {
+  width: 400px;
+}
+
+.password-input {
+  width: 400px;
+}
+
+.submit-input {
+  width: 400px;
+}
+
 .field {
   width: 400px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #bbb8b8;
+  justify-content: center;
+  margin: 5px;
 }
 
 .actions {
-  width: 50px;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: center;
+  margin: 5px;
 }
