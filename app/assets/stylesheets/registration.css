@@ -1,0 +1,21 @@
+/* app/assets/stylesheets/registration.css */
+
+/* Center the entire content vertically and horizontally */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for the form container */
+.field {
+  width: 400px; /* Adjust as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #bbb8b8;
+}
+
+.actions {
+  width: 50px;
+}
